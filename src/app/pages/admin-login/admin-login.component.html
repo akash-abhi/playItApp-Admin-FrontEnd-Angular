@@ -1,0 +1,27 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="background-color: #80DEEA;">
+                <h1>Welcome to Admin Login Portal :)</h1>
+                <form (ngSubmit)="login()">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Email</mat-label>
+                        <input [(ngModel)]="loginDetails.email" name="email" matInput placeholder="Enter Email">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Password</mat-label>
+                        <input [(ngModel)]="loginDetails.password" type="password" name="password" matInput placeholder="Enter Password">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-raised-button type="submit" color="primary">Login</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
