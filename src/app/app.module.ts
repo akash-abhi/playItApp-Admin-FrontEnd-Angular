@@ -16,11 +16,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import {MatListModule} from '@angular/material/list';
+
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainwindowComponent } from './components/mainwindow/mainwindow.component';
 
-
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({

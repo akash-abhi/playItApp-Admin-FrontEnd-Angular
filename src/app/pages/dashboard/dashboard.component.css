@@ -1,0 +1,24 @@
+.parent{
+    padding: 0px;
+    margin: 0px;
+    background-color: #80D8FF;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+}
+
+.child{
+    background-color: blue;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+
+.bottom{
+    background-color: azure;
+    height: 80vh;
+}
