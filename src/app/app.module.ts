@@ -21,6 +21,14 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainwindowComponent } from './components/mainwindow/mainwindow.component';
 
 import {MatListModule} from '@angular/material/list';
+import { PlayersComponent } from './components/players/players.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddteamComponent } from './dialogs/addteam/addteam.component';
+import { AddplayerComponent } from './dialogs/addplayer/addplayer.component';
+import {MatSelectModule} from '@angular/material/select';
+import { UpdateTeamComponent } from './dialogs/update-team/update-team.component';
+import { UpdatePlayerComponent } from './dialogs/update-player/update-player.component';
 
 
 @NgModule({
@@ -29,7 +37,13 @@ import {MatListModule} from '@angular/material/list';
     AdminLoginComponent,
     DashboardComponent,
     SidebarComponent,
-    MainwindowComponent
+    MainwindowComponent,
+    PlayersComponent,
+    TeamsComponent,
+    AddteamComponent,
+    AddplayerComponent,
+    UpdateTeamComponent,
+    UpdatePlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +59,9 @@ import {MatListModule} from '@angular/material/list';
     HttpClientModule,
     CommonModule,
     MatListModule,
-    BrowserModule
+    BrowserModule,
+    MatDialogModule,
+    MatSelectModule
    
 
   ],

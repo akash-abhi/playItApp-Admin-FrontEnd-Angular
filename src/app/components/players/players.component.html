@@ -1,0 +1,45 @@
+<div class="main">
+    <div class="c">
+    <h2>
+        All Players
+    </h2>
+    <div class="add-team"  (click)="openDialog()">
+        <span class="material-icons-sharp warning">
+            add
+            </span>
+        <h3>Add Player</h3></div>
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Player Name</th>
+                <th >Team Name</th>
+                <th>Skills</th>
+                <th>Player Points</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of players">
+                <td>{{p.id}}</td>
+                <td>{{p.playerName}}</td>
+                <td>{{p.teamName}}</td>
+                <td>{{p.skills}}</td>
+                <td>{{p.playerPoints}}</td>
+                <td style="cursor: pointer;">
+                  
+                    <span (click)="updatePlayer(p.id)" class="material-icons-sharp warning">
+                        edit
+                        </span>
+                    <span (click)="deletePlayer(p.id)" class="material-icons-sharp danger">
+                        delete
+                        </span>
+                        
+               </td>
+
+           
+        </tbody>
+    </table>
+    <a href="#">Show All</a>
+</div>

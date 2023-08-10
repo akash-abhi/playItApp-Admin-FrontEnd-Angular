@@ -1,0 +1,63 @@
+<div class="main">
+    <div class="c">
+    <h2>
+        All Teams
+    </h2>
+    <div class="add-team" (click)="openDialog()">
+        <span class="material-icons-sharp warning">
+            add
+            </span>
+        <h3>Add Team</h3></div>
+        
+</div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Team Name</th>
+                <th >Team Logo</th>
+                <th>Actions</th>
+                <td></td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>101</td>
+                <td>India</td>
+                <td class="country-img"><img src="../../../assets/IndiaLogo.png" /></td>
+                <td>
+                    <span class="material-icons-sharp primary">
+                        visibility
+                        </span>
+                    <span class="material-icons-sharp warning">
+                        edit
+                        </span>
+                    <span class="material-icons-sharp danger">
+                        delete
+                        </span>
+                </td>
+                
+            </tr> -->
+
+            <tr *ngFor="let t of teams">
+                <td>{{t.id}}</td>
+                <td>{{t.teamname}}</td>
+                <td class="country-img"><img src="../../../assets/{{t.teamlogourl}}"  alt="not found"/></td>
+                <td style="cursor: pointer;">
+                   
+                    <span (click)="updateTeam(t.id)" class="material-icons-sharp warning">
+                        edit
+                        </span>
+                    <span  (click)="deleteTeam(t.id)" class="material-icons-sharp danger">
+                        delete
+                        </span>
+                </td>
+            </tr>
+          
+        </tbody>
+    </table>
+    <a href="#">Show All</a>
+</div>

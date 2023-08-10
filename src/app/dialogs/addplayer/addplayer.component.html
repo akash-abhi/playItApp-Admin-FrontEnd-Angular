@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <h1>Enter Team Details :</h1>
+            <form (ngSubmit)="addPlayer()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Player Name</mat-label>
+                    <input [(ngModel)]="player.playerName" name="playerName" matInput placeholder="Player Name">
+                </mat-form-field>
+
+ 
+                <mat-form-field appearance="outline">
+                    <mat-label>Team Name</mat-label>
+                    <mat-select [(ngModel)]="player.teamName" name="teamName">
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Skills</mat-label>
+                    <input [(ngModel)]="player.skills" name="skills" matInput placeholder="Skills">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Player Points</mat-label>
+                    <input [(ngModel)]="player.playerPoints" name="playerPoints" matInput placeholder="Player Points">
+                </mat-form-field>
+
+                <div>
+                    <button mat-raised-button type="submit" color="primary">Add Team</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

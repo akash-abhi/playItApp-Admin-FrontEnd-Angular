@@ -1,0 +1,28 @@
+
+<div *ngIf="loadCompleted" class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+           
+               <h1>Update Team Details:</h1>
+                <form (ngSubmit)="updateTeam()">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Team Name</mat-label>
+                        <input [(ngModel)]="team.teamname"  name="teamname" matInput placeholder="Team Name">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Logo</mat-label>
+                        <input [(ngModel)]="team.teamlogourl"  name="teamlogourl" matInput placeholder="Logo URL">
+                    </mat-form-field>
+
+                    <div>
+                        <button type="submit" mat-raised-button type="submit" color="primary">Update Team</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+ 

@@ -15,9 +15,9 @@
   </aside>
 
 
-<!-- Main Mindow Section -->
+  <!-- Main Mindow Section -->
 
-    <!-- Upper cards -->
+  <!-- Upper cards -->
   <main>
     <h1>Dashboard</h1>
     <div class="insights">
@@ -33,41 +33,41 @@
               Total Contests
             </h3>
             <h1>25</h1>
-            
+
           </div>
         </div>
         <small class="text-muted">Current Running Contests</small>
       </div>
 
-       <!-- User joind card display -->
-       <div class="user">
+      <!-- User joind card display -->
+      <div class="user">
         <span class="material-icons-sharp">
           people
-          </span>
+        </span>
         <div class="middle">
           <div class="left">
             <h3>
               Total User Joined
             </h3>
             <h1>101</h1>
-            
+
           </div>
         </div>
         <small class="text-muted">All Users Joined</small>
       </div>
 
-       <!--Sales card display -->
-       <div class="sales">
+      <!--Sales card display -->
+      <div class="sales">
         <span class="material-icons-sharp">
           real_estate_agent
-          </span>
+        </span>
         <div class="middle">
           <div class="left">
             <h3>
               Total Sales
             </h3>
             <h1>$25</h1>
-            
+
           </div>
         </div>
         <small class="text-muted">Income</small>
@@ -76,7 +76,34 @@
 
 
     <!-- main window -->
-    <app-mainwindow></app-mainwindow>
+    <!-- <app-mainwindow></app-mainwindow> -->
+    <router-outlet></router-outlet>
 
   </main>
+
+  <!-- right side  of window -->
+  <div class="right">
+    <div class="top">
+      <button id="menu-btn">
+        <span class="material-icons-sharp">menu</span>
+      </button>
+      <div class="theme-toggler">
+        <span class="material-icons-sharp active">light_mode</span>
+        <span class="material-icons-sharp">dark_mode</span>
+      </div>
+      <div class="profile">
+        <div class="info">
+          <p>Hey, <b>Akash</b></p>
+          <div class="role">
+          <small class="text-muted">Admin</small>
+        </div>
+        </div>
+        <div class="profile-photo">
+          <img src="../../../assets/profile.jpg">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>

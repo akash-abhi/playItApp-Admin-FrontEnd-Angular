@@ -1,0 +1,40 @@
+<div *ngIf="loadPlayerCompleted && loadTeamCompleted" class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <h1>Update Player Details :</h1>
+            <form (ngSubmit)="updatePlayer()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Player Name</mat-label>
+                    <input [(ngModel)]="p.playerName" name="playerName" matInput placeholder="Player Name">
+                </mat-form-field>
+
+ 
+                <mat-form-field appearance="outline">
+                    <mat-label>Team Name</mat-label>
+                    <mat-select [(ngModel)]="p.teamName" name="teamName" >
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Skills</mat-label>
+                    <input [(ngModel)]="p.skills" name="skills" matInput placeholder="Skills">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Player Points</mat-label>
+                    <input [(ngModel)]="p.playerPoints" name="playerPoints" matInput placeholder="Player Points">
+                </mat-form-field>
+
+                <div>
+                    <button mat-raised-button type="submit" color="primary">Update Player</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
