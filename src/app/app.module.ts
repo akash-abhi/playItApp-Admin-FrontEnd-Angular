@@ -29,6 +29,14 @@ import { AddplayerComponent } from './dialogs/addplayer/addplayer.component';
 import {MatSelectModule} from '@angular/material/select';
 import { UpdateTeamComponent } from './dialogs/update-team/update-team.component';
 import { UpdatePlayerComponent } from './dialogs/update-player/update-player.component';
+import { MatchfixturesComponent } from './components/matchfixtures/matchfixtures.component';
+import { AddmatchfixtureComponent } from './dialogs/addmatchfixture/addmatchfixture.component';
+import { UpdateMatchfixturesComponent } from './dialogs/update-matchfixtures/update-matchfixtures.component';
+import { ContextComponent } from './components/context/context.component';
+import { AddcontestComponent } from './dialogs/addcontest/addcontest.component';
+import { UpdateContestComponent } from './dialogs/update-contest/update-contest.component';
+
+
 
 
 @NgModule({
@@ -43,7 +51,15 @@ import { UpdatePlayerComponent } from './dialogs/update-player/update-player.com
     AddteamComponent,
     AddplayerComponent,
     UpdateTeamComponent,
-    UpdatePlayerComponent
+    UpdatePlayerComponent,
+    MatchfixturesComponent,
+    AddmatchfixtureComponent,
+    UpdateMatchfixturesComponent,
+    ContextComponent,
+    AddcontestComponent,
+    UpdateContestComponent,
+ 
+   
   ],
   imports: [
     BrowserModule,

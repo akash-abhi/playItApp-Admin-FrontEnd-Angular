@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TeamService } from 'src/app/services/team.service';
 
 @Component({
@@ -16,17 +17,28 @@ export class AddteamComponent {
   };
   
   
+  teamForm = new FormGroup({
+    teamname:new FormControl('',[Validators.required]),
+    teamlogourl:new FormControl('',[Validators.required])
+  });
 
   constructor(private _teamService:TeamService) { }
 
- 
+ get teamname(){
+  return this.teamForm.get('teamname');
+ }
 
+ get teamlogourl(){
+  return this.teamForm.get('teamlogourl');
+ }
 
   addTeam(){
+ 
    
     this._teamService.createTeam(this.team).subscribe(
       (data)=>{
         console.log(data)
+        this._teamService.teamAddSubject.next(true);
         alert("success");
       },
       (error)=>{

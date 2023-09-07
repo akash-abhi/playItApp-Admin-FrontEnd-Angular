@@ -41,7 +41,7 @@ export class UpdatePlayerComponent implements OnInit {
     this._playerService.getPlayerById(this.id).subscribe(
       (data)=>{
         this.p = data;
-        console.log(this.p)
+       
       },
       (error)=>{
         console.log(error);

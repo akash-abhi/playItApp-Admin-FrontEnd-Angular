@@ -1,26 +1,29 @@
-
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row">
-           
-               <h1>Enter Team Details :</h1>
-                <form (ngSubmit)="addTeam()">
 
-                    <mat-form-field appearance="outline">
-                        <mat-label>Team Name</mat-label>
-                        <input [(ngModel)]="team.teamname"  name="teamname" matInput placeholder="Team Name">
-                    </mat-form-field>
+            <h1>Enter Team Details :</h1>
+            <form [formGroup]="teamForm" (ngSubmit)="addTeam()">
 
-                    <mat-form-field appearance="outline">
-                        <mat-label>Logo</mat-label>
-                        <input [(ngModel)]="team.teamlogourl"  name="teamlogourl" matInput placeholder="Logo URL">
-                    </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Team Name</mat-label>
+                    <input [(ngModel)]="team.teamname" name="teamname" matInput placeholder="Team Name"
+                        formControlName="teamname">
+                    <mat-hint *ngIf="teamname && teamname.invalid && teamname.touched">Teamname is Required!!!</mat-hint>
+                </mat-form-field>
 
-                    <div>
-                        <button mat-raised-button type="submit" color="primary">Add Team</button>
-                        </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Logo</mat-label>
+                    <input [(ngModel)]="team.teamlogourl" name="teamlogourl" matInput placeholder="Logo URL"
+                        formControlName="teamlogourl">
+                        <mat-hint *ngIf="teamlogourl && teamlogourl.invalid && teamlogourl.touched">Team Logo is Required!!!</mat-hint>
+                </mat-form-field>
 
-                </form>
-            </div>
+                <div>
+                    <button [disabled]="teamForm.invalid" mat-raised-button type="submit" color="primary">Add Team</button>
+                </div>
+
+            </form>
         </div>
     </div>
+</div>

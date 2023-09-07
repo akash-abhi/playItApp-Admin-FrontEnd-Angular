@@ -1,13 +1,13 @@
 <div class="main">
     <div class="c">
     <h2>
-        All Teams
+        All Contests
     </h2>
     <div class="add-team" (click)="openDialog()">
         <span class="material-icons-sharp warning">
             add
             </span>
-        <h3>Add Team</h3></div>
+        <h3>Add Contest</h3></div>
         
 </div>
 
@@ -16,8 +16,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Team Name</th>
-                <th >Team Logo</th>
+                <th>Contest Name</th>
+                <th >Prize Money</th>
+                <th >Entry Fee</th>
                 <th>Actions</th>
                 <td></td>
                 
@@ -26,16 +27,17 @@
         <tbody>
         
 
-            <tr *ngFor="let t of teams">
-                <td>{{t.id}}</td>
-                <td>{{t.teamname}}</td>
-                <td class="country-img"><img src="{{t.teamlogourl}}"  alt="not found"/></td>
+            <tr *ngFor="let c of contests">
+                <td>{{c.id}}</td>
+                <td>{{c.contestname}}</td>
+                <td>{{c.prizemoney}}</td>
+                <td>{{c.enteryfee}}</td>
                 <td style="cursor: pointer;">
                    
-                    <span (click)="updateTeam(t.id)" class="material-icons-sharp warning">
+                    <span (click)="updateContest(c.id)" class="material-icons-sharp warning">
                         edit
                         </span>
-                    <span  (click)="deleteTeam(t.id)" class="material-icons-sharp danger">
+                    <span (click)="delete(c.id)"  class="material-icons-sharp danger">
                         delete
                         </span>
                 </td>

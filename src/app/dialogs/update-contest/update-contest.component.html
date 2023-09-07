@@ -1,0 +1,56 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            
+            <h1>Update Contest Details :</h1>
+            <form *ngIf="c"  (ngSubmit)="update()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contest Name</mat-label>
+                    <input [(ngModel)]="c.contestname" name="contestname" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Min Size</mat-label>
+                    <input [(ngModel)]="c.minsize"  type="number" name="minsize" matInput>
+                </mat-form-field>
+               
+                <mat-form-field appearance="outline">
+                    <mat-label>Max Size</mat-label>
+                    <input [(ngModel)]="c.maxsize" type="number" name="maxsize" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Prize Money</mat-label>
+                    <input [(ngModel)]="c.prizemoney"  type="number" name="prizemoney" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>enteryfee</mat-label>
+                    <input [(ngModel)]="c.enteryfee"  type="number" name="enteryfee" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 1 Prize</mat-label>
+                    <input [(ngModel)]="c.rank1prize" type="number" name="rank1prize" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 2 Prize</mat-label>
+                    <input [(ngModel)]="c.rank2prize" type="number" name="rank2prize" matInput >
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 3 Prize</mat-label>
+                    <input [(ngModel)]="c.rank3prize" type="number" name="rank3prize" matInput >
+                </mat-form-field>
+
+                <div>
+                    <button  mat-raised-button type="submit" color="primary">Update Contest</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

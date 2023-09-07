@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="c">
+    <h2>
+        Match Fixtures
+    </h2>
+    <div class="add-team"  (click)="openDialog()">
+        <span class="material-icons-sharp warning">
+            add
+            </span>
+        <h3>Add MatchFixtrue</h3></div>
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Team 1 name</th>
+                <th >Team 2 Name</th>
+                <th>Venue </th>
+                <th>Stage</th>
+                <th>Time and Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of matchfixtures">
+                <td>{{p.id}}</td>
+                <td>{{p.team1name}}</td>
+                <td>{{p.team2name}}</td>
+                <td>{{p.venue}}</td>
+                <td>{{p.stage}}</td>
+                <td>{{p.matchdatetime  | date:'medium'}}</td>
+                <td style="cursor: pointer;">
+                  
+                    <span (click)="updatePlayer(p.id)" class="material-icons-sharp warning">
+                        edit
+                        </span>
+                    <span (click)="delete(p.id)" class="material-icons-sharp danger">
+                        delete
+                        </span>
+                        
+               </td>
+
+           
+        </tbody>
+    </table>
+    <a href="#">Show All</a>
+</div>

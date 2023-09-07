@@ -1,0 +1,58 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <h1>Enter Details :</h1>
+            <form [formGroup]="matchFixtureForm" (ngSubmit)="add()">
+
+ 
+                <mat-form-field appearance="outline">
+                    <mat-label>Team 1 Name</mat-label>
+                    <mat-select  name="team1name" formControlName="team1name">
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="team1name && team1name.invalid && team1name.touched">team1name is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Team 2 Name</mat-label>
+                    <mat-select  name="team2name" formControlName="team2name">
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="team2name && team2name.invalid && team2name.touched">team2name is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Stage</mat-label>
+                    <mat-select  name="stage" formControlName="stage">
+                        <mat-option *ngFor="let stage of stageList" [value]="stage">
+                            {{stage}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="stage && stage.invalid && stage.touched">stage is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>date time</mat-label>
+                    <input type="datetime-local"  name="matchdatetime" matInput placeholder="matchdatetime" formControlName="matchdatetime">
+                    <mat-hint *ngIf="matchdatetime && matchdatetime.invalid && matchdatetime.touched">matchdatetime is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>venue</mat-label>
+                    <input  name="venue" matInput placeholder="venue" formControlName="venue">
+                    <mat-hint *ngIf="venue && venue.invalid && venue.touched">venue is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <div>
+                    <button [disabled]="matchFixtureForm.invalid" mat-raised-button type="submit" color="primary">Add </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

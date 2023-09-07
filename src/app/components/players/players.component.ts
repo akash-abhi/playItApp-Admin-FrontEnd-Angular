@@ -43,8 +43,10 @@ export class PlayersComponent implements OnInit {
   }
 
   deletePlayer(id:any){
+    
     this._playerService.deletePlayer(id).subscribe(
       (data)=>{
+        this.players=this.players.filter((p: { id: any; })=>  p.id!=id);
         console.log(data)
       },
       (error)=>{

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContextComponent } from './components/context/context.component';
+
+import { MatchfixturesComponent } from './components/matchfixtures/matchfixtures.component';
 import { PlayersComponent } from './components/players/players.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { UpdatePlayerComponent } from './dialogs/update-player/update-player.component';
@@ -13,7 +16,9 @@ const routes: Routes = [
   children:[
     {path:'players',component:PlayersComponent},
     {path:'teams',component:TeamsComponent},
-    {path:'updatePlayer',component:UpdatePlayerComponent}
+    {path:'updatePlayer',component:UpdatePlayerComponent},
+    {path:'matchfixtures',component:MatchfixturesComponent},
+    {path:'context',component:ContextComponent}
   ]
 },
 

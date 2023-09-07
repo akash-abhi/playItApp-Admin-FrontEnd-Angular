@@ -1,0 +1,72 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            
+            <h1>Enter Contest Details :</h1>
+            <form [formGroup]="contestForm" (ngSubmit)="addContest()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contest Name</mat-label>
+                    <input  name="contestname" matInput placeholder="contestname"
+                        formControlName="contestname">
+                    <mat-hint *ngIf="contestname && contestname.invalid && contestname.touched">Contest Name is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Min Size</mat-label>
+                    <input  type="number" name="minsize" matInput placeholder="minsize"
+                        formControlName="minsize">
+                    <mat-hint *ngIf="minsize && minsize.invalid && minsize.touched">Minsize  is Required!!!</mat-hint>
+                </mat-form-field>
+               
+                <mat-form-field appearance="outline">
+                    <mat-label>Max Size</mat-label>
+                    <input  type="number" name="maxsize" matInput placeholder="maxsize"
+                        formControlName="maxsize">
+                    <mat-hint *ngIf="maxsize && maxsize.invalid && maxsize.touched">Max Size  is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Prize Money</mat-label>
+                    <input  type="number" name="prizemoney" matInput placeholder="prizemoney"
+                        formControlName="prizemoney">
+                    <mat-hint *ngIf="prizemoney && prizemoney.invalid && prizemoney.touched">Prize Money is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>enteryfee</mat-label>
+                    <input  type="number" name="enteryfee" matInput placeholder="enteryfee"
+                        formControlName="enteryfee">
+                    <mat-hint *ngIf="enteryfee && enteryfee.invalid && enteryfee.touched">enteryfee is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 1 Prize</mat-label>
+                    <input  type="number" name="rank1prize" matInput placeholder="rank1prize"
+                        formControlName="rank1prize">
+                    <mat-hint *ngIf="rank1prize && rank1prize.invalid && rank1prize.touched">Rank 1 Prize is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 2 Prize</mat-label>
+                    <input  type="number" name="rank2prize" matInput placeholder="rank2prize"
+                        formControlName="rank2prize">
+                    <mat-hint *ngIf="rank2prize && rank2prize.invalid && rank2prize.touched">Rank 2 Prize is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rank 3 Prize</mat-label>
+                    <input  type="number" name="rank3prize" matInput placeholder="rank3prize"
+                        formControlName="rank3prize">
+                    <mat-hint *ngIf="rank3prize && rank3prize.invalid && rank3prize.touched">Rank 3 Prize is Required!!!</mat-hint>
+                </mat-form-field>
+
+                <div>
+                    <button [disabled]="contestForm.invalid" mat-raised-button type="submit" color="primary">Add Contest</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

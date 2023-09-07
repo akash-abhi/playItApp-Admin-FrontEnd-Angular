@@ -1,0 +1,58 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <h1>Update MatchFixture :</h1>
+            <form (ngSubmit)="update()" >
+
+ 
+                <mat-form-field appearance="outline">
+                    <mat-label>Team 1 Name</mat-label>
+                    <mat-select [(ngModel)]="matchfixture.team1name"   name="team1name" >
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+              
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Team 2 Name</mat-label>
+                    <mat-select [(ngModel)]="matchfixture.team2name"  name="team2name" >
+                        <mat-option *ngFor="let t of teams" [value]="t.teamname">
+                            {{t.teamname}}
+                        </mat-option>
+                    </mat-select>
+                   
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Stage</mat-label>
+                    <mat-select [(ngModel)]="matchfixture.stage"  name="stage" >
+                        <mat-option *ngFor="let stage of stageList" [value]="stage">
+                            {{stage}}
+                        </mat-option>
+                    </mat-select>
+                  
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>date time</mat-label>
+                    <input [(ngModel)]="matchfixture.matchdatetime"  type="datetime-local"  name="matchdatetime" matInput placeholder="matchdatetime" >
+                   
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>venue</mat-label>
+                    <input [(ngModel)]="matchfixture.venue" name="venue" matInput placeholder="venue">
+                   
+                </mat-form-field>
+
+                <div>
+                    <button mat-raised-button type="submit" color="primary">Update </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PlayerService {
   private baseUrl= "http://localhost:8080/playIt/api/v1/admin/player";
+  
   constructor(private _http:HttpClient) { }
 
   
@@ -32,5 +33,10 @@ export class PlayerService {
   //update player
   public updatePlayer(player:any){
     return this._http.put(`${this.baseUrl}/`,player);
+  }
+
+  //delete all player by teamname
+  public deleteAllPlayerByTeamname(teamname:any){
+    return this._http.delete(`${this.baseUrl}/delAllPlayer/${teamname}`);
   }
 }

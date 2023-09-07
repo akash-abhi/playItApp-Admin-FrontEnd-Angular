@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from 'src/app/services/player.service';
 import { TeamService } from 'src/app/services/team.service';
-
+import {FormGroup,FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-addplayer',
   templateUrl: './addplayer.component.html',
@@ -19,9 +19,30 @@ export class AddplayerComponent implements OnInit {
 
   };
   
+  playerForm=new FormGroup({
+    playerName:new FormControl('',[Validators.required]),
+    teamName:new FormControl('',[Validators.required]),
+    skills:new FormControl('',[Validators.required]),
+    playerPoints:new FormControl('',[Validators.required])
+  })
   
   public teams:any;
   
+  get playerName(){
+    return this.playerForm.get('playerName')
+  }
+
+  get teamName(){
+    return this.playerForm.get('teamName');
+  }
+
+  get skills(){
+    return this.playerForm.get('skills');
+  }
+
+  get playerPoints(){
+    return this.playerForm.get('playerPoints');
+  }
 
   constructor(private _playerService:PlayerService,private _teamService:TeamService) { }
 
